@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title><%- title %></title>
+    <link rel="icon" href="/src/assets/logo.png" />
+    <link rel="stylesheet" href="/static/css/spinner.css" />
+    <script src="https://g.alicdn.com/AWSC/AWSC/awsc.js"></script>
+    <script src="//at.alicdn.com/t/c/font_3783526_9345rgrr3cu.js"></script>
+    <style>
+      #micro-main-app {
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+      }
+      #micro-main-app #micro-sub-container {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        box-sizing: border-box;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="micro-main-app">
+      <div class="first-screen-spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
