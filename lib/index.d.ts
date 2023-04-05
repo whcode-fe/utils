@@ -45,7 +45,7 @@ export declare function allGive(target: any, source: any): void;
  * @param key 关联字段key
  * @param content 要修改的字段 字段名string 或数组
  */
-export declare function arrayGive(targrt: any, sources: any, key: string, content: any): void;
+export declare function arrayGive(targrt: any, sources: any, key?: string, content?: any): void;
 /**
  * 生成随机字符串
  * @param len 生成的字符串长度(不包含时间戳的长度)
