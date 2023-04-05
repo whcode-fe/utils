@@ -100,13 +100,7 @@ export function allGive(target: any, source: any) {
  * @param key 关联字段key
  * @param content 要修改的字段 字段名string 或数组
  */
-export function arrayGive(targrt: any, sources: any, key: string, content: any) {
-  if (key === void 0) {
-    key = 'prop';
-  }
-  if (content === void 0) {
-    content = 'content';
-  }
+export function arrayGive(targrt: any, sources: any, key: string = 'prop', content: any = 'content') {
   targrt.forEach(function (element) {
     if (element.hasOwnProperty(key)) {
       if (isArray(content)) {

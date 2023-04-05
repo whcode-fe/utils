@@ -39,6 +39,14 @@ export declare function clearCookie(name: string): void;
  */
 export declare function allGive(target: any, source: any): void;
 /**
+ * 遍历目标数组 从源对象获取数据并赋值。
+ * @param target array 目标对象
+ * @param source {} 源对象
+ * @param key 关联字段key
+ * @param content 要修改的字段 字段名string 或数组
+ */
+export declare function arrayGive(targrt: any, sources: any, key: string, content: any): void;
+/**
  * 生成随机字符串
  * @param len 生成的字符串长度(不包含时间戳的长度)
  * @param time 是否要在生成的字符串前面加时间戳  默认为true

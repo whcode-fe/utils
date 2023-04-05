@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/node': ^18.11.17
+  rollup: 3.7.5
   rollup-plugin-clear: ^2.0.7
   rollup-plugin-visualizer: ^5.8.3
   typescript: ^4.9.3
@@ -10,11 +11,12 @@ specifiers:
 
 devDependencies:
   '@types/node': 18.11.17
+  rollup: 3.7.5
   rollup-plugin-clear: 2.0.7
-  rollup-plugin-visualizer: 5.8.3
+  rollup-plugin-visualizer: 5.8.3_rollup@3.7.5
   typescript: 4.9.4
   vite: 4.0.3_@types+node@18.11.17
-  vite-plugin-dts: 1.7.1_vite@4.0.3
+  vite-plugin-dts: 1.7.1_rollup@3.7.5+vite@4.0.3
 
 packages:
 
@@ -276,7 +278,7 @@ packages:
       fastq: 1.14.0
     dev: true
 
-  /@rollup/pluginutils/5.0.2:
+  /@rollup/pluginutils/5.0.2_rollup@3.7.5:
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==, tarball: __tarballs/@rollup/pluginutils/5.0.2/__path/@rollup/pluginutils/-/pluginutils-5.0.2/012b8f53c71e4f6f9cb317e311df1404f56e7a33.tgz}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -288,6 +290,7 @@ packages:
       '@types/estree': 1.0.0
       estree-walker: 2.0.2
       picomatch: 2.3.1
+      rollup: 3.7.5
     dev: true
 
   /@rushstack/node-core-library/3.53.3:
@@ -425,7 +428,7 @@ packages:
     dev: true
 
   /commander/9.4.1:
-    resolution: {integrity: sha512-5EEkTNyHNGFPD2H+c/dXXfQZYa/scCKasxWcXJaWnNJ99pnQN9Vnmqow+p+PlFPE63Q6mThaZws1T+HxfpgtPw==, tarball: __tarballs/commander/9.4.1/__path/commander/-/commander-9.4.1/d1dd8f2ce6faf93147295c0df13c7c21141cfbdd.tgz}
+    resolution: {integrity: sha512-5EEkTNyHNGFPD2H+c/dXXfQZYa/scCKasxWcXJaWnNJ99pnQN9Vnmqow+p+PlFPE63Q6mThaZws1T+HxfpgtPw==, tarball: commander/-/commander-9.4.1/d1dd8f2ce6faf93147295c0df13c7c21141cfbdd.tgz}
     engines: {node: ^12.20.0 || >=14}
     requiresBuild: true
     dev: true
@@ -550,7 +553,7 @@ packages:
     dev: true
 
   /fsevents/2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==, tarball: __tarballs/fsevents/2.3.2/__path/fsevents/-/fsevents-2.3.2/8a526f78b8fdf4623b709e0b975c52c24c02fd1a.tgz}
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==, tarball: fsevents/-/fsevents-2.3.2/8a526f78b8fdf4623b709e0b975c52c24c02fd1a.tgz}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
@@ -839,7 +842,7 @@ packages:
       rimraf: 2.7.1
     dev: true
 
-  /rollup-plugin-visualizer/5.8.3:
+  /rollup-plugin-visualizer/5.8.3_rollup@3.7.5:
     resolution: {integrity: sha512-QGJk4Bqe4AOat5AjipOh8esZH1nck5X2KFpf4VytUdSUuuuSwvIQZjMGgjcxe/zXexltqaXp5Vx1V3LmnQH15Q==, tarball: __tarballs/rollup-plugin-visualizer/5.8.3/__path/rollup-plugin-visualizer/-/rollup-plugin-visualizer-5.8.3/2f002d6e1e38f4d4fb8638fd8d23ec799c3a2060.tgz}
     engines: {node: '>=14'}
     hasBin: true
@@ -850,12 +853,13 @@ packages:
         optional: true
     dependencies:
       open: 8.4.0
+      rollup: 3.7.5
       source-map: 0.7.4
       yargs: 17.6.2
     dev: true
 
   /rollup/3.7.5:
-    resolution: {integrity: sha512-z0ZbqHBtS/et2EEUKMrAl2CoSdwN7ZPzL17UMiKN9RjjqHShTlv7F9J6ZJZJNREYjBh3TvBrdfjkFDIXFNeuiQ==}
+    resolution: {integrity: sha512-z0ZbqHBtS/et2EEUKMrAl2CoSdwN7ZPzL17UMiKN9RjjqHShTlv7F9J6ZJZJNREYjBh3TvBrdfjkFDIXFNeuiQ==, tarball: __tarballs/rollup/3.7.5/__path/rollup/-/rollup-3.7.5/db580f8eda50237b0721ddea301fb981cd992933.tgz}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -973,14 +977,14 @@ packages:
     engines: {node: '>= 0.10'}
     dev: true
 
-  /vite-plugin-dts/1.7.1_vite@4.0.3:
+  /vite-plugin-dts/1.7.1_rollup@3.7.5+vite@4.0.3:
     resolution: {integrity: sha512-2oGMnAjcrZN7jM1TloiS1b1mCn42s3El04ix2RFhId5P1WfMigF8WAwsqT6a6jk0Yso8t7AeZsBkkxYShR0hBQ==, tarball: __tarballs/vite-plugin-dts/1.7.1/__path/vite-plugin-dts/-/vite-plugin-dts-1.7.1/7090237333a023a78bbcf7ce8e042531422f233a.tgz}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: '>=2.9.0'
     dependencies:
       '@microsoft/api-extractor': 7.33.7
-      '@rollup/pluginutils': 5.0.2
+      '@rollup/pluginutils': 5.0.2_rollup@3.7.5
       '@rushstack/node-core-library': 3.53.3
       debug: 4.3.4
       fast-glob: 3.2.12
