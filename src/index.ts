@@ -94,6 +94,37 @@ export function allGive(target: any, source: any) {
 }
 
 /**
+ * 遍历目标数组 从源对象获取数据并赋值。
+ * @param target array 目标对象
+ * @param source {} 源对象
+ * @param key 关联字段key
+ * @param content 要修改的字段 字段名string 或数组
+ */
+export function arrayGive(targrt: any, sources: any, key: string, content: any) {
+  if (key === void 0) {
+    key = 'prop';
+  }
+  if (content === void 0) {
+    content = 'content';
+  }
+  targrt.forEach(function (element) {
+    if (element.hasOwnProperty(key)) {
+      if (isArray(content)) {
+        content.forEach(function (contentItem) {
+          if (element.hasOwnProperty(contentItem)) {
+            element[contentItem] = sources[element[key]];
+          }
+        });
+      } else {
+        if (element.hasOwnProperty(content)) {
+          element[content] = sources[element[key]];
+        }
+      }
+    }
+  });
+}
+
+/**
  * 生成随机字符串
  * @param len 生成的字符串长度(不包含时间戳的长度)
  * @param time 是否要在生成的字符串前面加时间戳  默认为true
