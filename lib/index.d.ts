@@ -34,10 +34,11 @@ export declare function getCookie(name: string): string;
 export declare function clearCookie(name: string): void;
 /**
  * 遍历目标对象的每个key分别，从源对象获取数据并赋值，仅支持{}对象。
- * @param target 目标对象
- * @param source 源对象
+ * @param {object} target 目标对象
+ * @param {object} source 源对象
+ * @param {Array<string>} exclude  需要排除复制的key数组
  */
-export declare function allGive(target: any, source: any): void;
+export declare function allGive(target: object, source: object, exclude?: string[]): void;
 /**
  * 遍历目标数组 从源对象获取数据并赋值。
  * @param target array 目标对象
@@ -82,3 +83,8 @@ export declare function isObject(o: any): boolean;
  * @param o 入参
  */
 export declare function isNumber(o: any): boolean;
+/**
+ * 下划线转换驼峰
+ * @param {string} str 字符串
+ */
+export declare function underlineToHump(str: string): string;

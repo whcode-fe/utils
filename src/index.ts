@@ -81,13 +81,14 @@ export function clearCookie(name: string) {
 
 /**
  * 遍历目标对象的每个key分别，从源对象获取数据并赋值，仅支持{}对象。
- * @param target 目标对象
- * @param source 源对象
+ * @param {object} target 目标对象
+ * @param {object} source 源对象
+ * @param {Array<string>} exclude  需要排除复制的key数组
  */
-export function allGive(target: any, source: any) {
+export function allGive(target: object, source: object, exclude: string[] = []) {
   if (!isObject(target) || !isObject(source)) return;
   Object.keys(target).forEach(function (key) {
-    if (source[key] !== undefined) {
+    if (source[key] !== undefined && !exclude.includes(key)) {
       target[key] = source[key];
     }
   });
@@ -188,4 +189,18 @@ export function isObject(o: any) {
  */
 export function isNumber(o: any) {
   return Object.prototype.toString.call(o).slice(8, -1) === 'Number';
+}
+
+/**
+ * 下划线转换驼峰
+ * @param {string} str 字符串
+ */
+export function underlineToHump(str: string): string {
+  // 如果首字母是_，执行 replace 时会多一个_，这里需要去掉
+  if (str.slice(0, 1) === '_') {
+    str = str.slice(1);
+  }
+  return str.replace(/([^_])_+([^_])/g, function ($0, $1, $2) {
+    return $1 + $2.toUpperCase();
+  });
 }
