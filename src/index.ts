@@ -204,3 +204,12 @@ export function underlineToHump(str: string): string {
     return $1 + $2.toUpperCase();
   });
 }
+
+/**
+ * 深拷贝
+ * @param obj {any}
+ * @returns 深拷贝后的对象
+ */
+export function deepClone(obj: any) {
+  return JSON.parse(JSON.stringify(obj));
+}

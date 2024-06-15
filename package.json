@@ -1,6 +1,6 @@
 {
   "name": "@fe/utils",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "type": "module",
   "description": "前端仓库-公用脚本工具库",
   "main": "lib/index.js",

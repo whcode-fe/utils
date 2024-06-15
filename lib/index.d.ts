@@ -88,3 +88,9 @@ export declare function isNumber(o: any): boolean;
  * @param {string} str 字符串
  */
 export declare function underlineToHump(str: string): string;
+/**
+ * 深拷贝
+ * @param obj {any}
+ * @returns 深拷贝后的对象
+ */
+export declare function deepClone(obj: any): any;
