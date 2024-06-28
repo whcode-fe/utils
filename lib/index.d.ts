@@ -89,8 +89,17 @@ export declare function isNumber(o: any): boolean;
  */
 export declare function underlineToHump(str: string): string;
 /**
+ * 初始化原始对象
+ * @param obj {object} 对象数据
+ * @param exclude {array} 不需初始化的字段
+ * @param defaultValue {array} 需要指定默认值的属性对象
+ * @returns {void}
+ * 使用方法 objInit(obj)  objInit(obj, ['age', 'name']) objInit(obj, ['age', 'name'], { age: 20 })
+ */
+export declare const objInit: (obj: any, exclude?: any, defaultValue?: any) => any;
+/**
  * 深拷贝
- * @param obj {any}
+ * @param obj {any} 对象
  * @returns 深拷贝后的对象
  */
-export declare function deepClone(obj: any): any;
+export declare const deepClone: (obj: any) => any;

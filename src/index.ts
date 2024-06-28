@@ -14,11 +14,10 @@ export function setStorage(item: string, data: any) {
  */
 export function getStorage(item: string) {
   if (!item) return null;
-  var localdata = localStorage.getItem(item);
+  const localdata = localStorage.getItem(item);
   if (localdata !== null) {
     try {
-      var formatData = JSON.parse(localdata);
-      return formatData;
+      return JSON.parse(localdata);
     } catch (e) {
       return localdata;
     }
@@ -32,7 +31,7 @@ export function getStorage(item: string) {
  * @param url 地址
  */
 export function openNewtab(url: string) {
-  var a = document.createElement('a');
+  const a = document.createElement('a');
   a.setAttribute('href', url);
   a.setAttribute('target', '_blank');
   a.setAttribute('id', 'camnpr');
@@ -50,9 +49,9 @@ export function setCookie(name: string, value: any, exdays?: any) {
   if (exdays === void 0) {
     exdays = 365;
   }
-  var d = new Date();
+  const d = new Date();
   d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-  var expires = 'expires=' + d.toUTCString();
+  const expires = 'expires=' + d.toUTCString();
   document.cookie = name + '=' + value + '; ' + expires;
 }
 
@@ -61,10 +60,10 @@ export function setCookie(name: string, value: any, exdays?: any) {
  * @param  name key
  */
 export function getCookie(name: string) {
-  var _name = name + '=';
-  var ca = document.cookie.split(';');
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
+  const _name = name + '=';
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
     while (c.charAt(0) == ' ') c = c.substring(1);
     if (c.indexOf(_name) != -1) return c.substring(_name.length, c.length);
   }
@@ -102,10 +101,10 @@ export function allGive(target: object, source: object, exclude: string[] = []) 
  * @param content 要修改的字段 字段名string 或数组
  */
 export function arrayGive(targrt: any, sources: any, key: string = 'prop', content: any = 'content') {
-  targrt.forEach(function (element) {
+  targrt.forEach(function (element: any) {
     if (element.hasOwnProperty(key)) {
       if (isArray(content)) {
-        content.forEach(function (contentItem) {
+        content.forEach(function (contentItem: any) {
           if (element.hasOwnProperty(contentItem)) {
             element[contentItem] = sources[element[key]];
           }
@@ -131,10 +130,10 @@ export function randomName(len?: number, time: boolean = true) {
   if (time === void 0) {
     time = true;
   }
-  var chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';
-  var maxPos = chars.length;
-  var str = '';
-  for (var i = 0; i < len; i++) {
+  const chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';
+  const maxPos = chars.length;
+  let str = '';
+  for (let i = 0; i < len; i++) {
     str += chars.charAt(Math.floor(Math.random() * maxPos));
   }
   if (time) {
@@ -206,10 +205,48 @@ export function underlineToHump(str: string): string {
 }
 
 /**
+ * 初始化原始对象
+ * @param obj {object} 对象数据
+ * @param exclude {array} 不需初始化的字段
+ * @param defaultValue {array} 需要指定默认值的属性对象
+ * @returns {void}
+ * 使用方法 objInit(obj)  objInit(obj, ['age', 'name']) objInit(obj, ['age', 'name'], { age: 20 })
+ */
+export const objInit = (obj: any, exclude?: any, defaultValue?: any) => {
+  for (let key in obj) {
+    if (!exclude || !exclude.includes(key)) {
+      if (defaultValue && defaultValue[key]) {
+        obj[key] = defaultValue[key];
+        return;
+      }
+      switch (typeof obj[key]) {
+        case 'string':
+          obj[key] = '';
+          break;
+        case 'number':
+          obj[key] = null;
+          break;
+        case 'object':
+          if (obj[key] instanceof Array) {
+            obj[key] = [];
+          } else {
+            objInit(obj[key], exclude);
+          }
+          break;
+        case 'boolean':
+          obj[key] = true;
+          break;
+      }
+    }
+  }
+  return obj;
+};
+
+/**
  * 深拷贝
- * @param obj {any}
+ * @param obj {any} 对象
  * @returns 深拷贝后的对象
  */
-export function deepClone(obj: any) {
+export const deepClone = (obj: any) => {
   return JSON.parse(JSON.stringify(obj));
-}
+};
