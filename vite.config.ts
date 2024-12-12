@@ -11,7 +11,7 @@ export default defineConfig({
     sourcemap: true,
     lib: {
       entry: 'src/index.ts',
-      name: '@fe/utils',
+      name: '@whcode/utils',
       formats: ['es', 'umd'],
       fileName: 'index'
     }

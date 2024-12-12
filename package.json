@@ -1,6 +1,6 @@
 {
-  "name": "@fe/utils",
-  "version": "1.0.7",
+  "name": "@whcode/utils",
+  "version": "1.0.0",
   "type": "module",
   "description": "前端仓库-公用脚本工具库",
   "main": "lib/index.js",
@@ -9,6 +9,14 @@
   "unpkg": "lib/index.js",
   "author": "13971332694@163.com",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whcode-fe/utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/whcode-fe/utils/issues"
+  },
+  "homepage": "https://github.com/whcode-fe/utils#readme",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
